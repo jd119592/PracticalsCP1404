@@ -10,11 +10,15 @@ def main():
     """Program to load and display subject data from file."""
     data = load_data(FILENAME)
 
-    print_subj_details(data)
+    display_subjects(data)
+    subject_to_data = conver_data(data)
+    print(subject_to_data)
+    subject = input("What subject code: ")
+    print(f"{subject_to_data[subject][0]} teaches {subject}")
 
-def print_subj_details(data):
-    for i in range(0,len(data)):
-        print(f"{data[i][0]} is taught by {data[i][1]} and has {data[i][2]} students")
+# def print_subj_details(data):
+#     for i in range(0,len(data)):
+#         print(f"{data[i][0]} is taught by {data[i][1]} and has {data[i][2]} students")
 
 def load_data(filename=FILENAME):
     """Read data from file formatted like: subject,lecturer,number of students."""
@@ -32,7 +36,18 @@ def load_data(filename=FILENAME):
         print(data) # See if that worked
         print("----------")
     input_file.close()
-    print(data_nest)
+    # print(data_nest)
     return data_nest
+
+def conver_data(data):
+    subject_to_data = {}
+    for subject_data in data:
+        subject_to_data[subject_data[0]] = subject_data[1:]
+    return subject_to_data
+
+def display_subjects(data):
+    for subject_data in data:
+       # print(f"{data[subject_data][0]} is taught by {data[subject_data][1]} and has {data[data_nest][2]} students")
+       print("{} is taught by {:12} and has {:3} students".format(*subject_data))
 
 main()
