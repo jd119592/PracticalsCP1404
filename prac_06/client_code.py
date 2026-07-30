@@ -1,5 +1,5 @@
 
-from prac_06.wk6seminar import Product
+from prac_06.wk6seminarCLASSES import Product
 
 products = [Product("Phone", 340, False), Product("PC",
  1420.95, True), Product("Plant", 24.5, True)]
