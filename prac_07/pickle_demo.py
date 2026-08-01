@@ -18,7 +18,6 @@ print(languages, type(languages))
 
 for i, language in enumerate(languages):
     languages[i] = ProgrammingLanguage(*languages[0].values())
-    
 p = ProgrammingLanguage(*languages[0].values())
 
 
