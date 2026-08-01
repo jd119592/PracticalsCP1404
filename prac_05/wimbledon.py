@@ -4,7 +4,7 @@ actual time:    35min
 Write a program to read this file, process the data and display processed information:
 
 the champions and how many times they have won.
-the countries of the champions in alphabetical order
+the countries.csv of the champions in alphabetical order
 Requirements and Hints
 You need to store the data in appropriate data structures.
 The solution uses: a list of lists, a dictionary and a set.
@@ -28,7 +28,7 @@ def main():
     for name, number in name_to_champ_number.items():
        print(f"{name}, {number}")
     print()
-    print(f"These {len(champs)} countries have won Wimbledon:")
+    print(f"These {len(champs)} countries.csv have won Wimbledon:")
     print(*champs, sep=", ")
 
 
